@@ -62,11 +62,12 @@ def main():
     event_type = st.selectbox("Event Type", ["Casual", "Formal", "Party", "Work", "Other"])
     color_preference = st.text_input("Color Preference", "")
     style_preference = st.text_input("Style Preference", "")
-    custom_response = st.text_input("Custom Response", "")
+    gender_preference=st.selectbox("Gender Preference", ["Male","Female","No Preference"])
+    custom_response = st.text_input("Custom Request", "")
 
     # Submit Button
     if st.button("Submit"):
-        user_inputs = f"Event Type: {event_type}\nColor Preference: {color_preference}\nStyle Preference: {style_preference}\nCustom Response: {custom_response}"
+        user_inputs = f"Event Type: {event_type}\nColor Preference: {color_preference}\nStyle Preference: {style_preference}\nCustom Response: {custom_response}\nGender Preference: {gender_preference}"
 
         if user_inputs:
             outfit_recommendations, outfit_keywords = generate_outfit_recommendations(user_inputs)
